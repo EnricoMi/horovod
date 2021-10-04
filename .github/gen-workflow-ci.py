@@ -154,7 +154,7 @@ def main():
                 f'    name: "Init Workflow"\n'
                 f'    runs-on: self-hosted\n'
                 f'    outputs:\n'
-                f"      run_at_all: ${{{{ github.event_name != 'schedule' || github.repository == 'horovod/horovod' }}}}\n"
+                f"      run_at_all: ${{{{ github.event_name != 'schedule' || github.repository == 'EnricoMi/horovod' }}}}\n"
                 f"      # if we don't get a clear 'false', we fall back to building and testing\n"
                 f"      run_builds_and_tests: ${{{{ steps.tests.outputs.needed != 'false' }}}}\n"
                 f'\n'
@@ -280,7 +280,7 @@ def main():
                 f'        # AWS credentials are used to authenticate against AWS ECR to pull and push test images\n'
                 f'        # We can only authenticate when running on Horovod repo (not a fork)\n'
                 f'        if: >\n'
-                f'          github.repository == \'horovod/horovod\' &&\n'
+                f'          github.repository == \'EnricoMi/horovod\' &&\n'
                 f'          ( github.event_name != \'pull_request\' || github.event.pull_request.head.repo.full_name == github.repository )\n'
                 f'        continue-on-error: true\n'
                 f'        with:\n'
@@ -349,7 +349,7 @@ def main():
                 f'        if: >\n'
                 f'          github.event_name == \'push\' &&\n'
                 f'          github.ref == \'refs/heads/master\' &&\n'
-                f'          github.repository == \'horovod/horovod\' &&\n'
+                f'          github.repository == \'EnricoMi/horovod\' &&\n'
                 f'          steps.ecr.outcome == \'success\'\n'
                 f'        continue-on-error: true\n'
                 f'        run: |\n'
@@ -479,7 +479,7 @@ def main():
                 f'    needs: [{", ".join(needs)}]\n'
                 f'    runs-on: self-hosted\n'
                 f'    if: >\n'
-                f'      github.repository == \'horovod/horovod\' &&\n'
+                f'      github.repository == \'EnricoMi/horovod\' &&\n'
                 f"      needs.init-workflow.outputs.run_at_all == 'true' &&\n"
                 f"      needs.init-workflow.outputs.run_builds_and_tests == 'true' &&\n"
                 f'      ( github.event_name != \'pull_request\' || github.event.pull_request.head.repo.full_name == github.repository )\n'
@@ -489,7 +489,7 @@ def main():
                 f'        id: build\n'
                 f'        uses: EnricoMi/trigger-pipeline-action@master\n'
                 f'        env:\n'
-                f'          PIPELINE: "horovod/horovod"\n'
+                f'          PIPELINE: "EnricoMi/horovod"\n'
                 # on "push" event, github.event.pull_request.head.ref will be empty
                 # and trigger-pipeline-action falls back to github.ref
                 f'          BRANCH: "${{{{ github.event.pull_request.head.ref }}}}"\n'
@@ -549,9 +549,9 @@ def main():
                 f'        id: config\n'
                 f'        env:\n'
                 f'          # run workflow for all events on Horovod repo and non-schedule events on forks\n'
-                f'          run: ${{{{ github.repository == \'horovod/horovod\' || github.event_name != \'schedule\' }}}}\n'
+                f'          run: ${{{{ github.repository == \'EnricoMi/horovod\' || github.event_name != \'schedule\' }}}}\n'
                 f'          # push images only from Horovod repo and for schedule and push events\n'
-                f'          push: ${{{{ github.repository == \'horovod/horovod\' && contains(\'schedule,push\', github.event_name) }}}}\n'
+                f'          push: ${{{{ github.repository == \'EnricoMi/horovod\' && contains(\'schedule,push\', github.event_name) }}}}\n'
                 f'        run: |\n'
                 f'          echo Repository: ${{{{ github.repository }}}}\n'
                 f'          echo Event: ${{{{ github.event_name }}}}\n'
