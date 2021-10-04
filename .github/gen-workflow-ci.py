@@ -134,14 +134,14 @@ def main():
     def jobs(*jobs: str) -> str:
         return 'jobs:\n' \
                '  debug:\n' \
-               '    runs-on: ubuntu-latest\n' \
+               '    runs-on: self-hosted\n' \
                '    steps:\n' \
                '    - name: Debug Action\n' \
                '      uses: hmarr/debug-action@v1.0.0\n' \
                '\n' \
                '  event_file:\n' \
                '    name: "Event File"\n' \
-               '    runs-on: ubuntu-latest\n' \
+               '    runs-on: self-hosted\n' \
                '    steps:\n' \
                '    - name: Upload\n' \
                '      uses: actions/upload-artifact@v2\n' \
@@ -154,7 +154,7 @@ def main():
     def init_workflow_job() -> str:
         return (f'  init-workflow:\n'
                 f'    name: "Init Workflow"\n'
-                f'    runs-on: ubuntu-latest\n'
+                f'    runs-on: self-hosted\n'
                 f'    outputs:\n'
                 f"      run_at_all: ${{{{ github.event_name != 'schedule' || github.repository == 'horovod/horovod' }}}}\n"
                 f"      # if we don't get a clear 'false', we fall back to building and testing\n"
@@ -220,7 +220,7 @@ def main():
                 f'    if: >\n'
                 f"      needs.init-workflow.outputs.run_at_all == 'true' &&\n"
                 f"      needs.init-workflow.outputs.run_builds_and_tests == 'true'\n"
-                f'    runs-on: ubuntu-latest\n'
+                f'    runs-on: self-hosted\n'
                 f'\n'
                 f'    strategy:\n'
                 f'      max-parallel: {len([image for image in images if parallel_images in image])}\n'
@@ -479,7 +479,7 @@ def main():
         return (f'  {id}:\n'
                 f'    name: "{name}"\n'
                 f'    needs: [{", ".join(needs)}]\n'
-                f'    runs-on: ubuntu-latest\n'
+                f'    runs-on: self-hosted\n'
                 f'    if: >\n'
                 f'      github.repository == \'horovod/horovod\' &&\n'
                 f"      needs.init-workflow.outputs.run_at_all == 'true' &&\n"
@@ -543,7 +543,7 @@ def main():
                 f"      needs.init-workflow.outputs.run_builds_and_tests == 'true' &&\n"
                 f"      needs.build-and-test.result == 'success' &&\n"
                 f"      ( needs.buildkite.result == 'success' || needs.buildkite.result == 'skipped' )\n"
-                f'    runs-on: ubuntu-latest\n'
+                f'    runs-on: self-hosted\n'
                 f'    outputs:\n'
                 f'      run: ${{{{ steps.config.outputs.run }}}}\n'
                 f'      push: ${{{{ steps.config.outputs.push }}}}\n'
@@ -568,7 +568,7 @@ def main():
                 f'    name: Build docker image ${{{{ matrix.docker-image }}}} (push=${{{{ needs.docker-config.outputs.push }}}})\n'
                 f'    needs: docker-config\n'
                 f'    if: always() && needs.docker-config.outputs.run == \'true\'\n'
-                f'    runs-on: ubuntu-latest\n'
+                f'    runs-on: self-hosted\n'
                 f'\n'
                 f'    # we want an ongoing run of this workflow to be canceled by a later commit\n'
                 f'    # so that there is only one concurrent run of this workflow for each branch\n'
@@ -682,7 +682,7 @@ def main():
         return (f'  sync-files:\n'
                 f'    name: "Sync Files (${{{{ matrix.name }}}})"\n'
                 f'    needs: [{", ".join(needs)}]\n'
-                f'    runs-on: ubuntu-latest\n'
+                f'    runs-on: self-hosted\n'
                 f'\n'
                 f'    strategy:\n'
                 f'      fail-fast: false\n'

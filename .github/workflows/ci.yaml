@@ -23,14 +23,14 @@ concurrency:
 
 jobs:
   debug:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Debug Action
       uses: hmarr/debug-action@v1.0.0
 
   event_file:
     name: "Event File"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Upload
       uses: actions/upload-artifact@v2
@@ -40,7 +40,7 @@ jobs:
 
   init-workflow:
     name: "Init Workflow"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       run_at_all: ${{ github.event_name != 'schedule' || github.repository == 'horovod/horovod' }}
       # if we don't get a clear 'false', we fall back to building and testing
@@ -95,7 +95,7 @@ jobs:
     if: >
       needs.init-workflow.outputs.run_at_all == 'true' &&
       needs.init-workflow.outputs.run_builds_and_tests == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       max-parallel: 9
@@ -1760,7 +1760,7 @@ jobs:
     if: >
       needs.init-workflow.outputs.run_at_all == 'true' &&
       needs.init-workflow.outputs.run_builds_and_tests == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       max-parallel: 2
@@ -3424,7 +3424,7 @@ jobs:
   buildkite:
     name: "Build and Test GPU (on Builtkite)"
     needs: [init-workflow, build-and-test]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     if: >
       github.repository == 'horovod/horovod' &&
       needs.init-workflow.outputs.run_at_all == 'true' &&
@@ -3472,7 +3472,7 @@ jobs:
   buildkite-heads:
     name: "Build and Test GPU heads (on Builtkite)"
     needs: [init-workflow, buildkite]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     if: >
       github.repository == 'horovod/horovod' &&
       needs.init-workflow.outputs.run_at_all == 'true' &&
@@ -3529,7 +3529,7 @@ jobs:
       needs.init-workflow.outputs.run_builds_and_tests == 'true' &&
       needs.build-and-test.result == 'success' &&
       ( needs.buildkite.result == 'success' || needs.buildkite.result == 'skipped' )
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       run: ${{ steps.config.outputs.run }}
       push: ${{ steps.config.outputs.push }}
@@ -3554,7 +3554,7 @@ jobs:
     name: Build docker image ${{ matrix.docker-image }} (push=${{ needs.docker-config.outputs.push }})
     needs: docker-config
     if: always() && needs.docker-config.outputs.run == 'true'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     # we want an ongoing run of this workflow to be canceled by a later commit
     # so that there is only one concurrent run of this workflow for each branch
@@ -3668,7 +3668,7 @@ jobs:
   sync-files:
     name: "Sync Files (${{ matrix.name }})"
     needs: [init-workflow]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       fail-fast: false
