@@ -98,169 +98,24 @@ jobs:
     runs-on: self-hosted
 
     strategy:
-      max-parallel: 9
+      max-parallel: 1
       fail-fast: false
       matrix:
         include:
-          - image: test-cpu-gloo-py3_7-tf1_15_5-keras2_2_4-torch1_6_0-mxnet1_5_1_p0-pyspark3_1_2
-            Elastic_Spark_TensorFlow_Tests_2: true
-            Elastic_Tests_2: true
-            Gloo_Cluster_PyTests: true
-            Gloo_Keras_MNIST: true
-            Gloo_MXNet_MNIST: true
-            Gloo_Parallel_PyTests: true
-            Gloo_PyTorch_MNIST: true
-            Gloo_Single_PyTests: true
-            Gloo_TensorFlow_MNIST: true
-            Single_Keras_MNIST: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Keras_MNIST: true
-            Spark_Keras_Rossmann_Estimator: true
-            Spark_Keras_Rossmann_Run: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
-            build_timeout: 30
-
           - image: test-cpu-gloo-py3_7-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark2_4_8
-            Elastic_Spark_TensorFlow_Tests_1: true
-            Elastic_Spark_Torch_Tests: true
-            Elastic_Tests_1: true
-            Gloo_Cluster_PyTests: true
-            Gloo_MXNet_MNIST: true
-            Gloo_Parallel_PyTests: true
-            Gloo_PyTorch_MNIST: true
-            Gloo_Single_PyTests: true
+            Gloo_Cluster_PyTests_1: true
+            Gloo_Parallel_PyTests_1: true
+            Gloo_Single_PyTests_1: true
             Gloo_TensorFlow_2_0_Keras_MNIST: true
             Gloo_TensorFlow_2_0_MNIST: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
-            build_timeout: 30
-
-          - image: test-cpu-gloo-py3_8-tf2_5_1-keras_none-torch1_8_1-mxnet1_7_0_p2-pyspark3_1_2
-            Elastic_Tests_1: true
-            Gloo_Cluster_PyTests: true
-            Gloo_MXNet_MNIST: true
-            Gloo_Parallel_PyTests: true
-            Gloo_PyTorch_MNIST: true
-            Gloo_Single_PyTests: true
-            Gloo_TensorFlow_2_0_Keras_MNIST: true
-            Gloo_TensorFlow_2_0_MNIST: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
-            build_timeout: 30
-
-          - image: test-cpu-gloo-py3_8-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark3_0_3
-            Elastic_Spark_TensorFlow_Tests_1: true
-            Elastic_Spark_Torch_Tests: true
-            Elastic_Tests_1: true
-            Gloo_Cluster_PyTests: true
-            Gloo_MXNet_MNIST: true
-            Gloo_Parallel_PyTests: true
-            Gloo_PyTorch_MNIST: true
-            Gloo_Single_PyTests: true
-            Gloo_TensorFlow_2_0_Keras_MNIST: true
-            Gloo_TensorFlow_2_0_MNIST: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
-            build_timeout: 30
-
-          - image: test-cpu-gloo-py3_8-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark3_1_2
-            Elastic_Spark_TensorFlow_Tests_1: true
-            Elastic_Spark_Torch_Tests: true
-            Elastic_Tests_1: true
-            Gloo_Cluster_PyTests: true
-            Gloo_MXNet_MNIST: true
-            Gloo_Parallel_PyTests: true
-            Gloo_PyTorch_MNIST: true
-            Gloo_Single_PyTests: true
-            Gloo_TensorFlow_2_0_Keras_MNIST: true
-            Gloo_TensorFlow_2_0_MNIST: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
-            build_timeout: 30
-
-          - image: test-cpu-mpich-py3_8-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark3_1_2
-            MPI_Cluster_PyTests: true
-            MPI_MXNet_MNIST: true
-            MPI_Parallel_PyTests: true
-            MPI_PyTorch_MNIST: true
-            MPI_Single_PyTests: true
-            MPI_TensorFlow_2_0_Keras_MNIST: true
-            MPI_TensorFlow_2_0_MNIST: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            build_timeout: 30
-
-          - image: test-cpu-openmpi-gloo-py3_8-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark3_1_2
-            Elastic_Tests_1: true
-            Gloo_Cluster_PyTests: true
-            Gloo_MXNet_MNIST: true
-            Gloo_Parallel_PyTests: true
-            Gloo_PyTorch_MNIST: true
-            Gloo_Single_PyTests: true
-            Gloo_TensorFlow_2_0_Keras_MNIST: true
-            Gloo_TensorFlow_2_0_MNIST: true
-            MPI_Cluster_PyTests: true
-            MPI_MXNet_MNIST: true
-            MPI_Parallel_PyTests: true
-            MPI_PyTorch_MNIST: true
-            MPI_Single_PyTests: true
-            MPI_TensorFlow_2_0_Keras_MNIST: true
-            MPI_TensorFlow_2_0_MNIST: true
-            Run_PyTests_test_interactiverun: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
-            build_timeout: 30
-
-          - image: test-cpu-openmpi-py3_8-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark3_1_2
-            MPI_Cluster_PyTests: true
-            MPI_MXNet_MNIST: true
-            MPI_Parallel_PyTests: true
-            MPI_PyTorch_MNIST: true
-            MPI_Single_PyTests: true
-            MPI_TensorFlow_2_0_Keras_MNIST: true
-            MPI_TensorFlow_2_0_MNIST: true
-            Run_PyTests_test_interactiverun: true
-            Single_MXNet_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
             build_timeout: 30
 
           - image: test-gpu-gloo-py3_7-tf1_15_5-keras2_2_4-torch1_6_0-mxnet1_5_1_p0-pyspark3_1_2
-            build_timeout: 40
-
-          - image: test-gpu-gloo-py3_8-tf2_4_3-keras2_3_1-torch1_7_1-mxnet1_6_0_p0-pyspark3_1_2
-            build_timeout: 40
-
-          - image: test-gpu-gloo-py3_8-tf2_4_3-keras2_3_1-torch1_7_1-mxnet1_7_0_p1-pyspark3_1_2
-            build_timeout: 40
-
-          - image: test-gpu-gloo-py3_8-tf2_5_1-keras_none-torch1_8_1-mxnet1_8_0_p0-pyspark3_1_2
-            build_timeout: 40
-
-          - image: test-gpu-openmpi-gloo-py3_8-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark3_1_2
-            build_timeout: 40
-
-          - image: test-mixed-openmpi-gloo-py3_8-tf2_6_0-keras_none-torch1_9_0-mxnet1_8_0_p0-pyspark3_1_2
+            Gloo_Cluster_PyTests_2: true
+            Gloo_Keras_MNIST: true
+            Gloo_Parallel_PyTests_2: true
+            Gloo_Single_PyTests_2: true
+            Gloo_TensorFlow_MNIST: true
             build_timeout: 40
 
     steps:
@@ -490,31 +345,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Elastic_Tests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "cd /horovod/test/integration && HOROVOD_LOG_LEVEL=DEBUG pytest --forked -v --log-cli-level 10 --log-cli-format '[%(asctime)-15s %(levelname)s %(filename)s:%(lineno)d %(funcName)s()] %(message)s' --capture=no --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.elastic.xml test_elastic_torch.py test_elastic_tensorflow.py test_elastic_tensorflow_keras.py"
         shell: bash
 
-      - name: "Gloo Cluster PyTests [attempt 1 of 3]"
-        id: Gloo_Cluster_PyTests_run_1
+      - name: "Gloo Cluster PyTests 1 [attempt 1 of 3]"
+        id: Gloo_Cluster_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
         shell: bash
 
-      - name: "Gloo Cluster PyTests [attempt 2 of 3]"
-        id: Gloo_Cluster_PyTests_run_2
+      - name: "Gloo Cluster PyTests 1 [attempt 2 of 3]"
+        id: Gloo_Cluster_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests && steps.Gloo_Cluster_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_1 && steps.Gloo_Cluster_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
         shell: bash
 
-      - name: "Gloo Cluster PyTests [attempt 3 of 3]"
-        id: Gloo_Cluster_PyTests_run_3
+      - name: "Gloo Cluster PyTests 1 [attempt 3 of 3]"
+        id: Gloo_Cluster_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests && steps.Gloo_Cluster_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_1 && steps.Gloo_Cluster_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "Gloo Cluster PyTests 2 [attempt 1 of 3]"
+        id: Gloo_Cluster_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "Gloo Cluster PyTests 2 [attempt 2 of 3]"
+        id: Gloo_Cluster_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_2 && steps.Gloo_Cluster_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "Gloo Cluster PyTests 2 [attempt 3 of 3]"
+        id: Gloo_Cluster_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_2 && steps.Gloo_Cluster_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
         shell: bash
 
       - name: "Gloo Keras MNIST [attempt 1 of 3]"
@@ -598,31 +480,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_MXNet_MNIST_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m horovodrun -np 2 -H localhost:2 --gloo python /horovod/examples/mxnet/mxnet_mnist.py
         shell: bash
 
-      - name: "Gloo Parallel PyTests [attempt 1 of 3]"
-        id: Gloo_Parallel_PyTests_run_1
+      - name: "Gloo Parallel PyTests 1 [attempt 1 of 3]"
+        id: Gloo_Parallel_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
         shell: bash
 
-      - name: "Gloo Parallel PyTests [attempt 2 of 3]"
-        id: Gloo_Parallel_PyTests_run_2
+      - name: "Gloo Parallel PyTests 1 [attempt 2 of 3]"
+        id: Gloo_Parallel_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests && steps.Gloo_Parallel_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_1 && steps.Gloo_Parallel_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
         shell: bash
 
-      - name: "Gloo Parallel PyTests [attempt 3 of 3]"
-        id: Gloo_Parallel_PyTests_run_3
+      - name: "Gloo Parallel PyTests 1 [attempt 3 of 3]"
+        id: Gloo_Parallel_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests && steps.Gloo_Parallel_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_1 && steps.Gloo_Parallel_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Parallel PyTests 2 [attempt 1 of 3]"
+        id: Gloo_Parallel_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Parallel PyTests 2 [attempt 2 of 3]"
+        id: Gloo_Parallel_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_2 && steps.Gloo_Parallel_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Parallel PyTests 2 [attempt 3 of 3]"
+        id: Gloo_Parallel_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_2 && steps.Gloo_Parallel_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
         shell: bash
 
       - name: "Gloo PyTorch MNIST [attempt 1 of 3]"
@@ -652,31 +561,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_PyTorch_MNIST_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m horovodrun -np 2 -H localhost:2 --gloo python /horovod/examples/pytorch/pytorch_mnist.py --data-dir /data/pytorch_datasets
         shell: bash
 
-      - name: "Gloo Single PyTests [attempt 1 of 3]"
-        id: Gloo_Single_PyTests_run_1
+      - name: "Gloo Single PyTests 1 [attempt 1 of 3]"
+        id: Gloo_Single_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
         shell: bash
 
-      - name: "Gloo Single PyTests [attempt 2 of 3]"
-        id: Gloo_Single_PyTests_run_2
+      - name: "Gloo Single PyTests 1 [attempt 2 of 3]"
+        id: Gloo_Single_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests && steps.Gloo_Single_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_1 && steps.Gloo_Single_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
         shell: bash
 
-      - name: "Gloo Single PyTests [attempt 3 of 3]"
-        id: Gloo_Single_PyTests_run_3
+      - name: "Gloo Single PyTests 1 [attempt 3 of 3]"
+        id: Gloo_Single_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests && steps.Gloo_Single_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_1 && steps.Gloo_Single_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Single PyTests 2 [attempt 1 of 3]"
+        id: Gloo_Single_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Single PyTests 2 [attempt 2 of 3]"
+        id: Gloo_Single_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_2 && steps.Gloo_Single_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Single PyTests 2 [attempt 3 of 3]"
+        id: Gloo_Single_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_2 && steps.Gloo_Single_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
         shell: bash
 
       - name: "Gloo TensorFlow 2.0 Keras MNIST [attempt 1 of 3]"
@@ -760,31 +696,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_TensorFlow_MNIST_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m horovodrun -np 2 -H localhost:2 --gloo python /horovod/examples/tensorflow/tensorflow_mnist.py
         shell: bash
 
-      - name: "MPI Cluster PyTests [attempt 1 of 3]"
-        id: MPI_Cluster_PyTests_run_1
+      - name: "MPI Cluster PyTests 1 [attempt 1 of 3]"
+        id: MPI_Cluster_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
         shell: bash
 
-      - name: "MPI Cluster PyTests [attempt 2 of 3]"
-        id: MPI_Cluster_PyTests_run_2
+      - name: "MPI Cluster PyTests 1 [attempt 2 of 3]"
+        id: MPI_Cluster_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests && steps.MPI_Cluster_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_1 && steps.MPI_Cluster_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
         shell: bash
 
-      - name: "MPI Cluster PyTests [attempt 3 of 3]"
-        id: MPI_Cluster_PyTests_run_3
+      - name: "MPI Cluster PyTests 1 [attempt 3 of 3]"
+        id: MPI_Cluster_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests && steps.MPI_Cluster_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_1 && steps.MPI_Cluster_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "MPI Cluster PyTests 2 [attempt 1 of 3]"
+        id: MPI_Cluster_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "MPI Cluster PyTests 2 [attempt 2 of 3]"
+        id: MPI_Cluster_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_2 && steps.MPI_Cluster_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "MPI Cluster PyTests 2 [attempt 3 of 3]"
+        id: MPI_Cluster_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_2 && steps.MPI_Cluster_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
         shell: bash
 
       - name: "MPI Cluster PyTests [ONECCL MPI] [attempt 1 of 3]"
@@ -922,31 +885,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_MXNet_MNIST_ONECCL_OFI_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "\$(cat /oneccl_env) && echo '/mpirun_command_ofi' > /mpirun_command && OMP_NUM_THREADS=1 \$(cat /mpirun_command) python /horovod/examples/mxnet/mxnet_mnist.py"
         shell: bash
 
-      - name: "MPI Parallel PyTests [attempt 1 of 3]"
-        id: MPI_Parallel_PyTests_run_1
+      - name: "MPI Parallel PyTests 1 [attempt 1 of 3]"
+        id: MPI_Parallel_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
         shell: bash
 
-      - name: "MPI Parallel PyTests [attempt 2 of 3]"
-        id: MPI_Parallel_PyTests_run_2
+      - name: "MPI Parallel PyTests 1 [attempt 2 of 3]"
+        id: MPI_Parallel_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests && steps.MPI_Parallel_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_1 && steps.MPI_Parallel_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
         shell: bash
 
-      - name: "MPI Parallel PyTests [attempt 3 of 3]"
-        id: MPI_Parallel_PyTests_run_3
+      - name: "MPI Parallel PyTests 1 [attempt 3 of 3]"
+        id: MPI_Parallel_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests && steps.MPI_Parallel_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_1 && steps.MPI_Parallel_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+        shell: bash
+
+      - name: "MPI Parallel PyTests 2 [attempt 1 of 3]"
+        id: MPI_Parallel_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+        shell: bash
+
+      - name: "MPI Parallel PyTests 2 [attempt 2 of 3]"
+        id: MPI_Parallel_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_2 && steps.MPI_Parallel_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+        shell: bash
+
+      - name: "MPI Parallel PyTests 2 [attempt 3 of 3]"
+        id: MPI_Parallel_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_2 && steps.MPI_Parallel_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
         shell: bash
 
       - name: "MPI Parallel PyTests [ONECCL MPI] [attempt 1 of 3]"
@@ -1084,31 +1074,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_PyTorch_MNIST_ONECCL_OFI_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "\$(cat /oneccl_env) && echo '/mpirun_command_ofi' > /mpirun_command && \$(cat /mpirun_command) python /horovod/examples/pytorch/pytorch_mnist.py --data-dir /data/pytorch_datasets"
         shell: bash
 
-      - name: "MPI Single PyTests [attempt 1 of 3]"
-        id: MPI_Single_PyTests_run_1
+      - name: "MPI Single PyTests 1 [attempt 1 of 3]"
+        id: MPI_Single_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
         shell: bash
 
-      - name: "MPI Single PyTests [attempt 2 of 3]"
-        id: MPI_Single_PyTests_run_2
+      - name: "MPI Single PyTests 1 [attempt 2 of 3]"
+        id: MPI_Single_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests && steps.MPI_Single_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_1 && steps.MPI_Single_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
         shell: bash
 
-      - name: "MPI Single PyTests [attempt 3 of 3]"
-        id: MPI_Single_PyTests_run_3
+      - name: "MPI Single PyTests 1 [attempt 3 of 3]"
+        id: MPI_Single_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests && steps.MPI_Single_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_1 && steps.MPI_Single_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+        shell: bash
+
+      - name: "MPI Single PyTests 2 [attempt 1 of 3]"
+        id: MPI_Single_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+        shell: bash
+
+      - name: "MPI Single PyTests 2 [attempt 2 of 3]"
+        id: MPI_Single_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_2 && steps.MPI_Single_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+        shell: bash
+
+      - name: "MPI Single PyTests 2 [attempt 3 of 3]"
+        id: MPI_Single_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_2 && steps.MPI_Single_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
         shell: bash
 
       - name: "MPI Single PyTests [ONECCL MPI] [attempt 1 of 3]"
@@ -1763,28 +1780,17 @@ jobs:
     runs-on: self-hosted
 
     strategy:
-      max-parallel: 2
+      max-parallel: 1
       fail-fast: false
       matrix:
         include:
           - image: test-cpu-gloo-py3_8-tfhead-keras_none-torchhead-mxnethead-pyspark3_1_2
-            Elastic_Tests_1: true
-            Gloo_Cluster_PyTests: true
-            Gloo_MXNet2_MNIST: true
-            Gloo_Parallel_PyTests: true
-            Gloo_PyTorch_MNIST: true
-            Gloo_Single_PyTests: true
+            Gloo_Cluster_PyTests_1: true
+            Gloo_Parallel_PyTests_1: true
+            Gloo_Single_PyTests_1: true
             Gloo_TensorFlow_2_0_Keras_MNIST: true
             Gloo_TensorFlow_2_0_MNIST: true
-            Single_MXNet2_MNIST: true
-            Single_PyTorch_MNIST: true
-            Spark_Lightning_MNIST: true
-            Spark_PyTests: true
-            Spark_Torch_MNIST: true
             build_timeout: 30
-
-          - image: test-gpu-gloo-py3_8-tfhead-keras_none-torchhead-mxnethead-pyspark3_1_2
-            build_timeout: 40
 
     steps:
       - name: Clean up disk space
@@ -2013,31 +2019,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Elastic_Tests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "cd /horovod/test/integration && HOROVOD_LOG_LEVEL=DEBUG pytest --forked -v --log-cli-level 10 --log-cli-format '[%(asctime)-15s %(levelname)s %(filename)s:%(lineno)d %(funcName)s()] %(message)s' --capture=no --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.elastic.xml test_elastic_torch.py test_elastic_tensorflow.py test_elastic_tensorflow_keras.py"
         shell: bash
 
-      - name: "Gloo Cluster PyTests [attempt 1 of 3]"
-        id: Gloo_Cluster_PyTests_run_1
+      - name: "Gloo Cluster PyTests 1 [attempt 1 of 3]"
+        id: Gloo_Cluster_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
         shell: bash
 
-      - name: "Gloo Cluster PyTests [attempt 2 of 3]"
-        id: Gloo_Cluster_PyTests_run_2
+      - name: "Gloo Cluster PyTests 1 [attempt 2 of 3]"
+        id: Gloo_Cluster_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests && steps.Gloo_Cluster_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_1 && steps.Gloo_Cluster_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
         shell: bash
 
-      - name: "Gloo Cluster PyTests [attempt 3 of 3]"
-        id: Gloo_Cluster_PyTests_run_3
+      - name: "Gloo Cluster PyTests 1 [attempt 3 of 3]"
+        id: Gloo_Cluster_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests && steps.Gloo_Cluster_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_1 && steps.Gloo_Cluster_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "Gloo Cluster PyTests 2 [attempt 1 of 3]"
+        id: Gloo_Cluster_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "Gloo Cluster PyTests 2 [attempt 2 of 3]"
+        id: Gloo_Cluster_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_2 && steps.Gloo_Cluster_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "Gloo Cluster PyTests 2 [attempt 3 of 3]"
+        id: Gloo_Cluster_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Cluster_PyTests_2 && steps.Gloo_Cluster_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Cluster_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.gloo.static.xml test_static_run.py"
         shell: bash
 
       - name: "Gloo Keras MNIST [attempt 1 of 3]"
@@ -2121,31 +2154,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_MXNet_MNIST_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m horovodrun -np 2 -H localhost:2 --gloo python /horovod/examples/mxnet/mxnet_mnist.py
         shell: bash
 
-      - name: "Gloo Parallel PyTests [attempt 1 of 3]"
-        id: Gloo_Parallel_PyTests_run_1
+      - name: "Gloo Parallel PyTests 1 [attempt 1 of 3]"
+        id: Gloo_Parallel_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
         shell: bash
 
-      - name: "Gloo Parallel PyTests [attempt 2 of 3]"
-        id: Gloo_Parallel_PyTests_run_2
+      - name: "Gloo Parallel PyTests 1 [attempt 2 of 3]"
+        id: Gloo_Parallel_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests && steps.Gloo_Parallel_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_1 && steps.Gloo_Parallel_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
         shell: bash
 
-      - name: "Gloo Parallel PyTests [attempt 3 of 3]"
-        id: Gloo_Parallel_PyTests_run_3
+      - name: "Gloo Parallel PyTests 1 [attempt 3 of 3]"
+        id: Gloo_Parallel_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests && steps.Gloo_Parallel_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_1 && steps.Gloo_Parallel_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Parallel PyTests 2 [attempt 1 of 3]"
+        id: Gloo_Parallel_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Parallel PyTests 2 [attempt 2 of 3]"
+        id: Gloo_Parallel_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_2 && steps.Gloo_Parallel_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Parallel PyTests 2 [attempt 3 of 3]"
+        id: Gloo_Parallel_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Parallel_PyTests_2 && steps.Gloo_Parallel_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Parallel_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 horovodrun -np 2 -H localhost:2 --gloo /bin/bash /pytest.sh gloo)"
         shell: bash
 
       - name: "Gloo PyTorch MNIST [attempt 1 of 3]"
@@ -2175,31 +2235,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_PyTorch_MNIST_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m horovodrun -np 2 -H localhost:2 --gloo python /horovod/examples/pytorch/pytorch_mnist.py --data-dir /data/pytorch_datasets
         shell: bash
 
-      - name: "Gloo Single PyTests [attempt 1 of 3]"
-        id: Gloo_Single_PyTests_run_1
+      - name: "Gloo Single PyTests 1 [attempt 1 of 3]"
+        id: Gloo_Single_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
         shell: bash
 
-      - name: "Gloo Single PyTests [attempt 2 of 3]"
-        id: Gloo_Single_PyTests_run_2
+      - name: "Gloo Single PyTests 1 [attempt 2 of 3]"
+        id: Gloo_Single_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests && steps.Gloo_Single_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_1 && steps.Gloo_Single_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
         shell: bash
 
-      - name: "Gloo Single PyTests [attempt 3 of 3]"
-        id: Gloo_Single_PyTests_run_3
+      - name: "Gloo Single PyTests 1 [attempt 3 of 3]"
+        id: Gloo_Single_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests && steps.Gloo_Single_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_1 && steps.Gloo_Single_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c " cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Single PyTests 2 [attempt 1 of 3]"
+        id: Gloo_Single_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Single PyTests 2 [attempt 2 of 3]"
+        id: Gloo_Single_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_2 && steps.Gloo_Single_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
+        shell: bash
+
+      - name: "Gloo Single PyTests 2 [attempt 3 of 3]"
+        id: Gloo_Single_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.Gloo_Single_PyTests_2 && steps.Gloo_Single_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_Single_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 15m bash -c "HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh gloo)"
         shell: bash
 
       - name: "Gloo TensorFlow 2.0 Keras MNIST [attempt 1 of 3]"
@@ -2283,31 +2370,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/Gloo_TensorFlow_MNIST_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m horovodrun -np 2 -H localhost:2 --gloo python /horovod/examples/tensorflow/tensorflow_mnist.py
         shell: bash
 
-      - name: "MPI Cluster PyTests [attempt 1 of 3]"
-        id: MPI_Cluster_PyTests_run_1
+      - name: "MPI Cluster PyTests 1 [attempt 1 of 3]"
+        id: MPI_Cluster_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
         shell: bash
 
-      - name: "MPI Cluster PyTests [attempt 2 of 3]"
-        id: MPI_Cluster_PyTests_run_2
+      - name: "MPI Cluster PyTests 1 [attempt 2 of 3]"
+        id: MPI_Cluster_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests && steps.MPI_Cluster_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_1 && steps.MPI_Cluster_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
         shell: bash
 
-      - name: "MPI Cluster PyTests [attempt 3 of 3]"
-        id: MPI_Cluster_PyTests_run_3
+      - name: "MPI Cluster PyTests 1 [attempt 3 of 3]"
+        id: MPI_Cluster_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests && steps.MPI_Cluster_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_1 && steps.MPI_Cluster_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "MPI Cluster PyTests 2 [attempt 1 of 3]"
+        id: MPI_Cluster_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "MPI Cluster PyTests 2 [attempt 2 of 3]"
+        id: MPI_Cluster_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_2 && steps.MPI_Cluster_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
+        shell: bash
+
+      - name: "MPI Cluster PyTests 2 [attempt 3 of 3]"
+        id: MPI_Cluster_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Cluster_PyTests_2 && steps.MPI_Cluster_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Cluster_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 /etc/init.d/ssh start && cd /horovod/test/integration && pytest --forked -v --capture=fd --continue-on-collection-errors --junit-xml=/artifacts/junit.mpi.static.xml test_static_run.py"
         shell: bash
 
       - name: "MPI Cluster PyTests [ONECCL MPI] [attempt 1 of 3]"
@@ -2445,31 +2559,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_MXNet_MNIST_ONECCL_OFI_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "\$(cat /oneccl_env) && echo '/mpirun_command_ofi' > /mpirun_command && OMP_NUM_THREADS=1 \$(cat /mpirun_command) python /horovod/examples/mxnet/mxnet_mnist.py"
         shell: bash
 
-      - name: "MPI Parallel PyTests [attempt 1 of 3]"
-        id: MPI_Parallel_PyTests_run_1
+      - name: "MPI Parallel PyTests 1 [attempt 1 of 3]"
+        id: MPI_Parallel_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
         shell: bash
 
-      - name: "MPI Parallel PyTests [attempt 2 of 3]"
-        id: MPI_Parallel_PyTests_run_2
+      - name: "MPI Parallel PyTests 1 [attempt 2 of 3]"
+        id: MPI_Parallel_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests && steps.MPI_Parallel_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_1 && steps.MPI_Parallel_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
         shell: bash
 
-      - name: "MPI Parallel PyTests [attempt 3 of 3]"
-        id: MPI_Parallel_PyTests_run_3
+      - name: "MPI Parallel PyTests 1 [attempt 3 of 3]"
+        id: MPI_Parallel_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests && steps.MPI_Parallel_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_1 && steps.MPI_Parallel_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c "  cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+        shell: bash
+
+      - name: "MPI Parallel PyTests 2 [attempt 1 of 3]"
+        id: MPI_Parallel_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+        shell: bash
+
+      - name: "MPI Parallel PyTests 2 [attempt 2 of 3]"
+        id: MPI_Parallel_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_2 && steps.MPI_Parallel_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
+        shell: bash
+
+      - name: "MPI Parallel PyTests 2 [attempt 3 of 3]"
+        id: MPI_Parallel_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Parallel_PyTests_2 && steps.MPI_Parallel_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Parallel_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 5m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/parallel && (ls -1 test_*.py | xargs -n 1 \$(cat /mpirun_command) /bin/bash /pytest.sh mpi)"
         shell: bash
 
       - name: "MPI Parallel PyTests [ONECCL MPI] [attempt 1 of 3]"
@@ -2607,31 +2748,58 @@ jobs:
           docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_PyTorch_MNIST_ONECCL_OFI_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "\$(cat /oneccl_env) && echo '/mpirun_command_ofi' > /mpirun_command && \$(cat /mpirun_command) python /horovod/examples/pytorch/pytorch_mnist.py --data-dir /data/pytorch_datasets"
         shell: bash
 
-      - name: "MPI Single PyTests [attempt 1 of 3]"
-        id: MPI_Single_PyTests_run_1
+      - name: "MPI Single PyTests 1 [attempt 1 of 3]"
+        id: MPI_Single_PyTests_1_run_1
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests && true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_1 && true
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_1
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
         shell: bash
 
-      - name: "MPI Single PyTests [attempt 2 of 3]"
-        id: MPI_Single_PyTests_run_2
+      - name: "MPI Single PyTests 1 [attempt 2 of 3]"
+        id: MPI_Single_PyTests_1_run_2
         continue-on-error: true
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests && steps.MPI_Single_PyTests_run_1.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_1 && steps.MPI_Single_PyTests_1_run_1.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_2
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
         shell: bash
 
-      - name: "MPI Single PyTests [attempt 3 of 3]"
-        id: MPI_Single_PyTests_run_3
+      - name: "MPI Single PyTests 1 [attempt 3 of 3]"
+        id: MPI_Single_PyTests_1_run_3
         continue-on-error: false
-        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests && steps.MPI_Single_PyTests_run_2.outcome == 'failure'
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_1 && steps.MPI_Single_PyTests_1_run_2.outcome == 'failure'
         run: |
-          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_3
-          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_1_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c "  cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+        shell: bash
+
+      - name: "MPI Single PyTests 2 [attempt 1 of 3]"
+        id: MPI_Single_PyTests_2_run_1
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_2 && true
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_1
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_1:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+        shell: bash
+
+      - name: "MPI Single PyTests 2 [attempt 2 of 3]"
+        id: MPI_Single_PyTests_2_run_2
+        continue-on-error: true
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_2 && steps.MPI_Single_PyTests_2_run_1.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_2
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_2:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
+        shell: bash
+
+      - name: "MPI Single PyTests 2 [attempt 3 of 3]"
+        id: MPI_Single_PyTests_2_run_3
+        continue-on-error: false
+        if: always() && steps.build.outcome == 'success' && matrix.MPI_Single_PyTests_2 && steps.MPI_Single_PyTests_2_run_2.outcome == 'failure'
+        run: |
+          mkdir -p artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_3
+          docker-compose -f docker-compose.test.yml run -e GITHUB_ACTIONS --rm --volume "$(pwd)/artifacts/${{ matrix.image }}/MPI_Single_PyTests_2_run_3:/artifacts" ${{ matrix.image }} /usr/bin/timeout 10m bash -c " HOROVOD_TEST_GPU=1 cd /horovod/test/single && (ls -1 test_*.py | xargs -n 1 /bin/bash /pytest_standalone.sh mpi)"
         shell: bash
 
       - name: "MPI Single PyTests [ONECCL MPI] [attempt 1 of 3]"
@@ -3421,114 +3589,16 @@ jobs:
             ${{ steps.test-1.outputs.artifacts-path }}
             ${{ steps.test-2.outputs.artifacts-path }}
             ${{ steps.test-3.outputs.artifacts-path }}
-  buildkite:
-    name: "Build and Test GPU (on Builtkite)"
-    needs: [init-workflow, build-and-test]
-    runs-on: self-hosted
-    if: >
-      github.repository == 'horovod/horovod' &&
-      needs.init-workflow.outputs.run_at_all == 'true' &&
-      needs.init-workflow.outputs.run_builds_and_tests == 'true' &&
-      ( github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository )
-
-    steps:
-      - name: Trigger Buildkite Pipeline
-        id: build
-        uses: EnricoMi/trigger-pipeline-action@master
-        env:
-          PIPELINE: "horovod/horovod"
-          BRANCH: "${{ github.event.pull_request.head.ref }}"
-          MESSAGE: "GPU Tests triggered by GitHub"
-          BUILDKITE_API_ACCESS_TOKEN: ${{ secrets.BUILDKITE_TOKEN }}
-          BUILD_ENV_VARS: "{\"PIPELINE_MODE\": \"GPU NON HEADS\"}"
-
-      - name: Download Buildkite Artifacts
-        id: download
-        uses: docker://ghcr.io/enricomi/download-buildkite-artifact-action:v1
-        with:
-          github_token: ${{ github.token }}
-          buildkite_token: ${{ secrets.BUILDKITE_TOKEN }}
-          buildkite_build_url: ${{ steps.build.outputs.url }}
-          ignore_build_states: blocked,canceled,skipped,not_run
-          ignore_job_states: timed_out
-          output_path: artifacts/Unit Test Results - GPU NON HEADS on Builtkite
-
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: Unit Test Results - GPU NON HEADS on Builtkite
-          path: artifacts/Unit Test Results - GPU NON HEADS on Builtkite/**/*.xml
-
-      - name: Check Buildkite job state
-        if: >
-          always() &&
-          steps.download.conclusion == 'success' &&
-          steps.download.outputs.build-state != 'passed'
-        run: |
-          echo "::warning::Buildkite pipeline did not pass: ${{ steps.build.outputs.url }}"
-          exit 1
-
-  buildkite-heads:
-    name: "Build and Test GPU heads (on Builtkite)"
-    needs: [init-workflow, buildkite]
-    runs-on: self-hosted
-    if: >
-      github.repository == 'horovod/horovod' &&
-      needs.init-workflow.outputs.run_at_all == 'true' &&
-      needs.init-workflow.outputs.run_builds_and_tests == 'true' &&
-      ( github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository )
-
-    steps:
-      - name: Trigger Buildkite Pipeline
-        id: build
-        uses: EnricoMi/trigger-pipeline-action@master
-        env:
-          PIPELINE: "horovod/horovod"
-          BRANCH: "${{ github.event.pull_request.head.ref }}"
-          MESSAGE: "GPU Tests triggered by GitHub"
-          BUILDKITE_API_ACCESS_TOKEN: ${{ secrets.BUILDKITE_TOKEN }}
-          BUILD_ENV_VARS: "{\"PIPELINE_MODE\": \"GPU HEADS\"}"
-
-      - name: Download Buildkite Artifacts
-        id: download
-        uses: docker://ghcr.io/enricomi/download-buildkite-artifact-action:v1
-        with:
-          github_token: ${{ github.token }}
-          buildkite_token: ${{ secrets.BUILDKITE_TOKEN }}
-          buildkite_build_url: ${{ steps.build.outputs.url }}
-          ignore_build_states: blocked,canceled,skipped,not_run
-          ignore_job_states: timed_out
-          output_path: artifacts/Unit Test Results - GPU HEADS on Builtkite
-
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: Unit Test Results - GPU HEADS on Builtkite
-          path: artifacts/Unit Test Results - GPU HEADS on Builtkite/**/*.xml
-
-      - name: Check Buildkite job state
-        if: >
-          always() &&
-          steps.download.conclusion == 'success' &&
-          steps.download.outputs.build-state != 'passed'
-        run: |
-          echo "::warning::Buildkite pipeline did not pass: ${{ steps.build.outputs.url }}"
-          exit 1
-
   docker-config:
     name: Configure docker build
-    needs: [init-workflow, build-and-test, buildkite]
-    # build-and-test-cpu, build-gpu and buildkite might have been skipped (! needs.init-workflow.outputs.run_builds_and_tests)
-    # buildkite might have been skipped (workflow runs for a fork PR),
+    needs: [init-workflow, build-and-test]
+    # build-and-test-cpu and build-gpu might have been skipped (! needs.init-workflow.outputs.run_builds_and_tests)
     # we still want to build docker images (though we might not want to push them)
     if: >
       always() &&
       needs.init-workflow.outputs.run_at_all == 'true' &&
       needs.init-workflow.outputs.run_builds_and_tests == 'true' &&
-      needs.build-and-test.result == 'success' &&
-      ( needs.buildkite.result == 'success' || needs.buildkite.result == 'skipped' )
+      needs.build-and-test.result == 'success'
     runs-on: self-hosted
     outputs:
       run: ${{ steps.config.outputs.run }}
